@@ -9,7 +9,7 @@ const authJwt = require("./helpers/jwt");
 const errorHandler = require("./helpers/error-handler");
 
 app.use(cors());
-app.options("*", cors());
+app.options("*", cors()); 
 
 //middleware
 /* The above code is using the express.json() method to parse the incoming request bodies in a
