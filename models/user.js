@@ -25,6 +25,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    isAdmin: {
+        type: Boolean,
+        default: true,
+    },
 });
 
 userSchema.virtual('id').get(function () {

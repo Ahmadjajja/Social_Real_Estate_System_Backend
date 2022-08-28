@@ -68,11 +68,15 @@ router.post(`/`, uploadOptions.single('image'), async (req, res) => {
         location: req.body.location,
         finishType: req.body.finishType,
         noOfBedrooms: req.body.noOfBedrooms,
+        noOfBathrooms: req.body.noOfBathrooms,
         livingRooms: req.body.livingRooms,
         reception: req.body.reception,
         image: `${basePath}${fileName}`,
         price: req.body.price,
         category: req.body.category,
+        area: req.body.area,
+        diningRooms: req.body.diningRooms,
+        kitchen: req.body.kitchen,
     });
 
     product = await product.save();
@@ -110,11 +114,15 @@ router.put('/:id', uploadOptions.single('image'), async (req, res) => {
             location: req.body.location,
             finishType: req.body.finishType,
             noOfBedrooms: req.body.noOfBedrooms,
+            noOfBathrooms: req.body.noOfBathrooms,
             livingRooms: req.body.livingRooms,
             reception: req.body.reception,
-            image: imagepath, // "http://localhost:3000/public/upload/image-2323232"
+            image: imagepath,
             price: req.body.price,
             category: req.body.category,
+            area: req.body.area,
+            diningRooms: req.body.diningRooms,
+            kitchen: req.body.kitchen,
         },
         { new: true }
     );

@@ -17,7 +17,7 @@ const productSchema = mongoose.Schema({
         type: Number,
         required: true
     },
-    noOfBathroom: {
+    noOfBathrooms: {
         type: Number,
         required: true
     },
@@ -32,10 +32,6 @@ const productSchema = mongoose.Schema({
     image: {
         type: String,
         default: ''
-    },
-    isAdmin: {
-        type: Boolean,
-        default: true,
     },
     images: [{
         type: String
@@ -53,6 +49,18 @@ const productSchema = mongoose.Schema({
         type: Date,
         default: Date.now,
     },
+    area: {
+        type: Number,
+        default:0
+    },
+    diningRooms:{
+        type: Number,
+        default:0
+    },
+    kitchen:{
+        type: Number,
+        default:0
+    }
 })
 
 productSchema.virtual('id').get(function () {
