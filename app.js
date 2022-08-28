@@ -9,7 +9,7 @@ const authJwt = require("./helpers/jwt");
 const errorHandler = require("./helpers/error-handler");
 
 app.use(cors());
-app.options("*", cors()); 
+app.options("*", cors());
 
 //middleware
 /* The above code is using the express.json() method to parse the incoming request bodies in a
@@ -23,17 +23,15 @@ app.use(errorHandler);
 //Routes
 const categoriesRoutes = require("./routes/categories");
 const productsRoutes = require("./routes/products");
-const usersRoutes = require("./routes/users");
-const ordersRoutes = require("./routes/orders");
-// const orderItemsRoutes = require("./routes/orderItems");
+const usersRoutes = require("./routes/users");;
+const productItemRoutes = require("./routes/productItem");
 
 const api = process.env.API_URL;
 
 app.use(`${api}/categories`, categoriesRoutes);
 app.use(`${api}/products`, productsRoutes);
 app.use(`${api}/users`, usersRoutes);
-app.use(`${api}/orders`, ordersRoutes);
-// app.use(`${api}/orderItems`, orderItemsRoutes);
+app.use(`${api}/productItem`, productItemRoutes);
 
 //Database
 mongoose
@@ -49,14 +47,14 @@ mongoose
     console.log(err);
   });
 
-//Development Server
-// app.listen(3000, () => {
-//   console.log("server is running http://localhost:3000");
-// });
+// Development Server
+app.listen(3000, () => {
+  console.log("server is running http://localhost:3000");
+});
 
-//Production Server
-var server = app.listen(process.env.PORT || 3000, function () {
-  var port = server.address().port;
-  /* Logging the port number to the console. */
-  console.log("Express is working on port " + port)
-})
+// //Production Server
+// var server = app.listen(process.env.PORT || 3000, function () {
+//   var port = server.address().port;
+//   /* Logging the port number to the console. */
+//   console.log("Express is working on port " + port)
+// })
