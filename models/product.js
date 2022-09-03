@@ -62,8 +62,8 @@ const productSchema = mongoose.Schema({
         default:0
     },
     ownerPhoneNumber:{
-        type: Number,
-        default:0
+        type: String,
+        default:""
     }
 })
 
