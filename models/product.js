@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-// const { Category } = require('./category');
+const { Category } = require('./category');
 const productSchema = mongoose.Schema({
     tital: { //
         type: String,
@@ -58,6 +58,10 @@ const productSchema = mongoose.Schema({
         default:0
     },
     kitchen:{
+        type: Number,
+        default:0
+    },
+    ownerPhoneNumber:{
         type: Number,
         default:0
     }
