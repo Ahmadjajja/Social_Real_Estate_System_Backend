@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 // const { Category } = require('./category');
 const productSchema = mongoose.Schema({
-    tital: {
+    tital: { //
         type: String,
         required: true,
     },
@@ -9,24 +9,24 @@ const productSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    finishType: {
+    finishType: { //
         type: String,
         required: true
     },
-    noOfBedrooms: {
+    noOfBedrooms: { //
         type: Number,
         required: true
     },
-    noOfBathrooms: {
+    noOfBathrooms: { //
         type: Number,
         required: true
     },
-    livingRooms: {
+    livingRooms: { //
         type: Number,
         required: true
     },
-    reception: {
-        type: Boolean,
+    reception: { //
+        type: String,
         required: true
     },
     image: {

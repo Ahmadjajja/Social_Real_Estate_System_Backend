@@ -3,32 +3,32 @@ const { Category } = require('../models/category');
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-const multer = require('multer');
+// const multer = require('multer');
 
-const FILE_TYPE_MAP = {
-    'image/png': 'png',
-    'image/jpeg': 'jpeg', 
-    'image/jpg': 'jpg'
-};
+// const FILE_TYPE_MAP = {
+//     'image/png': 'png',
+//     'image/jpeg': 'jpeg', 
+//     'image/jpg': 'jpg'
+// };
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        const isValid = FILE_TYPE_MAP[file.mimetype];
-        let uploadError = new Error('invalid image type');
+// const storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//         const isValid = FILE_TYPE_MAP[file.mimetype];
+//         let uploadError = new Error('invalid image type');
 
-        if (isValid) {
-            uploadError = null;
-        }
-        cb(uploadError, 'public/uploads');
-    },
-    filename: function (req, file, cb) {
-        const fileName = file.originalname.split(' ').join('-');
-        const extension = FILE_TYPE_MAP[file.mimetype];
-        cb(null, `${fileName}-${Date.now()}.${extension}`);
-    }
-});
+//         if (isValid) {
+//             uploadError = null;
+//         }
+//         cb(uploadError, 'public/uploads');
+//     },
+//     filename: function (req, file, cb) {
+//         const fileName = file.originalname.split(' ').join('-');
+//         const extension = FILE_TYPE_MAP[file.mimetype];
+//         cb(null, `${fileName}-${Date.now()}.${extension}`);
+//     }
+// });
 
-const uploadOptions = multer({ storage: storage });
+// const uploadOptions = multer({ storage: storage });
 
 router.get(`/`, async (req, res) => {
     console.log("request up and running")
@@ -53,16 +53,16 @@ router.get(`/:id`, async (req, res) => {
     }
     res.send(product);
 });
-
-router.post(`/`, uploadOptions.single('image'), async (req, res) => {
+// uploadOptions.single('image'),
+router.post(`/`,  async (req, res) => {
     const category = await Category.findById(req.body.category);
     if (!category) return res.status(400).send('Invalid Category');
 
-    const file = req.file;
-    if (!file) return res.status(400).send('No image in the request');
+    // const file = req.file;
+    // if (!file) return res.status(400).send('No image in the request');
 
-    const fileName = file.filename;
-    const basePath = `${req.protocol}://${req.get('host')}/public/uploads/`;
+    // const fileName = file.filename;
+    // const basePath = `${req.protocol}://${req.get('host')}/public/uploads/`;
     let product = new Product({
         tital: req.body.tital,
         location: req.body.location,
@@ -71,7 +71,7 @@ router.post(`/`, uploadOptions.single('image'), async (req, res) => {
         noOfBathrooms: req.body.noOfBathrooms,
         livingRooms: req.body.livingRooms,
         reception: req.body.reception,
-        image: `${basePath}${fileName}`,
+        image: req.body.image,
         price: req.body.price,
         category: req.body.category,
         area: req.body.area,
@@ -85,8 +85,8 @@ router.post(`/`, uploadOptions.single('image'), async (req, res) => {
 
     res.send(product);
 });
-
-router.put('/:id', uploadOptions.single('image'), async (req, res) => {
+// uploadOptions.single('image'),
+router.put('/:id', async (req, res) => {
     if (!mongoose.isValidObjectId(req.params.id)) {
         return res.status(400).send('Invalid Product Id');
     }
@@ -96,16 +96,16 @@ router.put('/:id', uploadOptions.single('image'), async (req, res) => {
     const product = await Product.findById(req.params.id);
     if (!product) return res.status(400).send('Invalid Product!');
 
-    const file = req.file;
-    let imagepath;
+    // const file = req.file;
+    // let imagepath;
 
-    if (file) {
-        const fileName = file.filename;
-        const basePath = `${req.protocol}://${req.get('host')}/public/uploads/`;
-        imagepath = `${basePath}${fileName}`;
-    } else {
-        imagepath = product.image;
-    }
+    // if (file) {
+    //     const fileName = file.filename;
+    //     const basePath = `${req.protocol}://${req.get('host')}/public/uploads/`;
+    //     imagepath = `${basePath}${fileName}`;
+    // } else {
+    //     imagepath = product.image;
+    // }
 
     const updatedProduct = await Product.findByIdAndUpdate(
         req.params.id,
@@ -117,7 +117,8 @@ router.put('/:id', uploadOptions.single('image'), async (req, res) => {
             noOfBathrooms: req.body.noOfBathrooms,
             livingRooms: req.body.livingRooms,
             reception: req.body.reception,
-            image: imagepath,
+            // image: imagepath,
+            image: req.body.image,
             price: req.body.price,
             category: req.body.category,
             area: req.body.area,
@@ -179,31 +180,31 @@ router.get(`/get/featured/:count`, async (req, res) => {
     res.send(products);
 });
 
-router.put('/gallery-images/:id', uploadOptions.array('images', 10), async (req, res) => {
-    if (!mongoose.isValidObjectId(req.params.id)) {
-        return res.status(400).send('Invalid Product Id');
-    }
-    const files = req.files;
-    let imagesPaths = [];
-    const basePath = `${req.protocol}://${req.get('host')}/public/uploads/`;
+// router.put('/gallery-images/:id', uploadOptions.array('images', 10), async (req, res) => {
+//     if (!mongoose.isValidObjectId(req.params.id)) {
+//         return res.status(400).send('Invalid Product Id');
+//     }
+//     const files = req.files;
+//     let imagesPaths = [];
+//     const basePath = `${req.protocol}://${req.get('host')}/public/uploads/`;
 
-    if (files) {
-        files.map((file) => {
-            imagesPaths.push(`${basePath}${file.filename}`);
-        });
-    }
+//     if (files) {
+//         files.map((file) => {
+//             imagesPaths.push(`${basePath}${file.filename}`);
+//         });
+//     }
 
-    const product = await Product.findByIdAndUpdate(
-        req.params.id, 
-        {
-            images: imagesPaths 
-        },
-        { new: true } 
-    );
+//     const product = await Product.findByIdAndUpdate(
+//         req.params.id, 
+//         {
+//             images: imagesPaths 
+//         },
+//         { new: true } 
+//     );
 
-    if (!product) return res.status(500).send('the gallery cannot be updated!');
+//     if (!product) return res.status(500).send('the gallery cannot be updated!');
 
-    res.send(product);
-});
+//     res.send(product);
+// });
 
 module.exports = router;
