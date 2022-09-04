@@ -77,6 +77,7 @@ router.post(`/`,  async (req, res) => {
         area: req.body.area,
         diningRooms: req.body.diningRooms,
         kitchen: req.body.kitchen,
+        ownerPhoneNumber: req.body.ownerPhoneNumber
     });
 
     product = await product.save();
@@ -124,6 +125,7 @@ router.put('/:id', async (req, res) => {
             area: req.body.area,
             diningRooms: req.body.diningRooms,
             kitchen: req.body.kitchen,
+            ownerPhoneNumber: req.body.ownerPhoneNumber
         },
         { new: true }
     );
