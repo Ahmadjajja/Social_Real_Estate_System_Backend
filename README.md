@@ -2,7 +2,7 @@
 
 It is worth noting that Saylani Mass IT Training Program is an exceptional institution launched by the Saylani Welfare International Trust of Pakistan, dedicated to providing the latest IT skills to aspiring developers.
 
-Moving on to the project functionalities, the BACK_END of the Real Estate Mobile App comes packed with a range of impressive REST APIs. Firstly, the app includes- 
+**Moving on to the project functionalities**, the BACK_END of the Real Estate Mobile App comes packed with a range of impressive REST APIs. Firstly, the app includes- 
 * Authentication functionality to ensure secure access to its various features.
 * Additionally, users can add, delete, update, and create properties via dedicated REST APIs. 
 * The app also includes a REST API to track likes and dislikes of properties, among many other functionalities.
