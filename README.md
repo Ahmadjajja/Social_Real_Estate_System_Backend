@@ -10,4 +10,5 @@ It is worth noting that **[Saylani Mass IT Training Program(SMIT)](https://sayla
 In summary, **the BACK_END of the Real Estate Mobile App** is a powerful and efficient piece of software that demonstrates the my skills in creating top-of-the-line REST APIs to power a modern mobile app.
 
 <hr />
-**[The Frontend of The Real Estate Mobile App](https://github.com/Ahmadjajja/Hackathon_Frontend_2022_Batch_04)** 
+
+**[The Frontend of The Real Estate Mobile App]([https://saylaniwelfare.com/en](https://github.com/Ahmadjajja/Hackathon_Frontend_2022_Batch_04))**
