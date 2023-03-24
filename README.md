@@ -8,3 +8,6 @@ It is worth noting that **[Saylani Mass IT Training Program(SMIT)](https://sayla
 * The app also includes a REST API to track likes and dislikes of properties, among many other functionalities.
 
 In summary, **the BACK_END of the Real Estate Mobile App** is a powerful and efficient piece of software that demonstrates the my skills in creating top-of-the-line REST APIs to power a modern mobile app.
+
+<hr />
+**[The Frontend of The Real Estate Mobile App](https://github.com/Ahmadjajja/Hackathon_Frontend_2022_Batch_04)**
