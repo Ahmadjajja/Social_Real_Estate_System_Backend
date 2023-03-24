@@ -1,14 +1,10 @@
-# -Hackathon_Backend_2022_Batch_04
-This is BACK_END of Real_estate mobile app that i have made during Final Hackathon of WEB & MOBILE BATCH 04 organise by Saylani Mass IT Training Program(SMIT) on August 28, 2022.
-## NOTE:
-  Saylani Mass IT Training Program Institution is launced by Saylani Welfare International Trust of Pakistan, This institution is number one institution of pakistan in provding latest IT Skills.
+**Welcome to the BACK_END of the Real Estate Mobile App**, created as part of the Final Hackathon of the WEB & MOBILE BATCH 04 organized by **[Saylani Mass IT Training Program(SMIT)](https://saylaniwelfare.com/en/services/education/technical-education/saylani-mass-it-training)** on August 28, 2022.
 
+It is worth noting that Saylani Mass IT Training Program is an exceptional institution launched by the Saylani Welfare International Trust of Pakistan, dedicated to providing the latest IT skills to aspiring developers.
 
-## Project Functionalities:
-01) Aunthentication 
-02) Add Property REST API
-03) Delete Property REST API
-04) Update Property REST API
-05) Create Property Rest API
-06) Liked, disliked property Rest API <br/>
-and many more Rest API's
+Moving on to the project functionalities, the BACK_END of the Real Estate Mobile App comes packed with a range of impressive REST APIs. Firstly, the app includes- 
+* Authentication functionality to ensure secure access to its various features.
+* Additionally, users can add, delete, update, and create properties via dedicated REST APIs. 
+* The app also includes a REST API to track likes and dislikes of properties, among many other functionalities.
+
+In summary, **the BACK_END of the Real Estate Mobile App** is a powerful and efficient piece of software that demonstrates the my skills in creating top-of-the-line REST APIs to power a modern mobile app.
