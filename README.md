@@ -7,7 +7,7 @@ It is worth noting that **[Saylani Mass IT Training Program(SMIT)](https://sayla
 * Additionally, users can add, delete, update, and create properties via dedicated REST APIs. 
 * The app also includes a REST API to track likes and dislikes of properties, among many other functionalities.
 
-In summary, **the BACK_END of the Real Estate Mobile App** is a powerful and efficient piece of software that demonstrates the my skills in creating top-of-the-line REST APIs to power a modern mobile app.
+
 
 <hr />
 
