@@ -11,4 +11,4 @@ It is worth noting that **[Saylani Mass IT Training Program(SMIT)](https://sayla
 
 <hr />
 
-**[The Frontend of The Real Estate Mobile App](https://github.com/Ahmadjajja/Hackathon_Frontend_2022_Batch_04)**
+**[Real_Estate_Mobile_App_Frontend](https://github.com/Ahmadjajja/Real_Estate_Mobile_App_Frontend)**
