@@ -11,4 +11,4 @@ It is worth noting that **[Saylani Mass IT Training Program(SMIT)](https://sayla
 
 <hr />
 
-**[Real_Estate_Mobile_App_Frontend](https://github.com/Ahmadjajja/Real_Estate_Mobile_App_Frontend)**
+**[Social_Real_Estate_System_Mobile_App_Frontend](https://github.com/Ahmadjajja/Social_Real_Estate_System_Mobile_App_Frontend)**
